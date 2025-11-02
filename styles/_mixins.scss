@@ -1,0 +1,44 @@
+@use 'variables' as *;
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin content-title {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 1.25;
+    letter-spacing: 0px;
+
+    @media screen and (min-width: $breakpoint-tablet) {
+        font-size: 2.5rem;
+    }
+}
+
+@mixin content-text {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.5;
+    letter-spacing: 0px;
+}
+
+@mixin btn-text {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 0.75rem;
+    line-height: 1.5;
+    letter-spacing: 0px;
+
+    @media screen and (min-width: $breakpoint-tablet) {
+        font-size: 1.125rem;
+    }
+}

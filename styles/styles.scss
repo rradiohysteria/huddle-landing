@@ -1,0 +1,162 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    background: url('../images/bg-mobile.svg') no-repeat center top / contain;
+    background-color: $purple-700;
+    color: $white;
+    @include flex-center;
+    flex-direction: column;
+    padding: $spacing-400;
+}
+
+main {
+    @include flex-column;
+    align-items: center;
+}
+
+header {
+    align-self: flex-start;
+    img {
+        width: 7.5rem;
+        margin-bottom: $spacing-800;
+    }
+}
+
+.illustration {
+    width: 100%;
+    max-width: 20rem;
+    margin-bottom: $spacing-700;
+}
+
+.content {
+    text-align: center;
+
+    &__title {
+        @include content-title;
+        & {
+            margin-bottom: $spacing-300;
+        }
+    }
+
+    &__text {
+        @include content-text;
+        margin-bottom: $spacing-400;
+    }
+
+    .btn {
+        border-radius: 1.25rem;
+        width: 12.5rem;
+        height: 40px;
+        border: none;
+        background-color: $white;
+        color: $purple-700;
+        box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.27);
+        @include btn-text;
+        & {
+            transition: 0.15s ease-in-out;
+        }
+
+        &:hover {
+            background-color: $magenta-400;
+            color: $white;
+        }
+    }
+}
+
+.socials {
+    display: flex;
+    gap: $spacing-200;
+    justify-content: center;
+    margin-top: $spacing-800;
+
+    .icon {
+        width: $spacing-200;
+        height: $spacing-200;
+        border: 1px solid white;
+        border-radius: 50%;
+        padding: $spacing-100;
+        transition: 0.1s ease-in;
+
+        &:hover {
+            color: $pink-400;
+            border: 1px solid $pink-400;
+        }
+    }
+}
+
+
+@media screen and (min-width: $breakpoint-tablet) {
+    header {
+        margin-left: $spacing-300;
+
+        img {
+            width: 12.5rem;
+        }
+    }
+    
+    .illustration {
+        max-width: 37.5rem;
+    }
+
+    .content {
+        width: 70%;
+        align-self: center;
+    }
+
+    .content {
+        .btn {
+            height: $spacing-700;
+            border-radius: 1.75rem;
+        }
+    }
+
+    .socials {
+        .icon {
+            width: 1.25rem;
+            height: 1.25rem;
+        }
+    }
+}
+
+@media screen and (min-width: $breakpoint-laptop) {
+    body {
+        background: url('../images/bg-desktop.svg') no-repeat center top / cover;
+        background-color: $purple-700;
+    }
+    
+    main {
+        flex-direction: row;
+        width: 90%;
+    }
+
+    .illustration {
+        max-width: 43.5rem;
+        margin-right: $spacing-700;
+    }
+
+    .content {
+        text-align: left;
+    }
+
+    header {
+        margin-left: $spacing-800;
+        img {
+            margin-bottom: 6.4rem;
+        }
+    }
+
+    .socials {
+        position: fixed;
+        bottom: $spacing-400;
+        right: 5rem;
+    }
+}
